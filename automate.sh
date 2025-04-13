@@ -1,5 +1,11 @@
 #!/bin/bash
 
+You said:
+if [ ! -d "venv" ]; then
+    echo "Virtual environment not found. Please create it using: python3 -m venv venv"
+    exit 1
+fi
+
 # Activate virtual environment
 source venv/bin/activate
 
