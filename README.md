@@ -1,4 +1,4 @@
-# Bank-Subscription-Prediction
+# OST-Bank-Subscription-Prediction
 
 ## Overview
 This repository contains code, resources and scripts for automated training and deployment for a machine learning project focused on predicting whether a person will subscribe to a bank or not. The project utilizes Random Forest. The model is deployed using Streamlit for interactive web-based predictions.
