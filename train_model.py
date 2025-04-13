@@ -81,4 +81,16 @@ model_filename = f"model_{timestamp}.pkl"
 model_path = os.path.join(MODEL_DIR, model_filename)
 joblib.dump(model, model_path)
 
+# Keep only the latest 3 models in the models/ directory
+model_files = sorted(
+    [f for f in os.listdir("models") if f.endswith(".pkl")],
+    key=lambda x: os.path.getmtime(os.path.join("models", x)),
+    reverse=True
+)
+
+# Delete older models
+for old_model in model_files[3:]:
+    os.remove(os.path.join("models", old_model))
+    print(f"Deleted old model: {old_model}")
+
 print(f"Model saved as: {model_path}")
